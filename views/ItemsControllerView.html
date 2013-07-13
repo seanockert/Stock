@@ -1,0 +1,62 @@
+<header class="bar-title" ng-tap="unFocus()">
+	<a class="button-prev" ng-tap="$navigate.back()">Back</a>
+	<h1 class="title">{{filtered.length}} {{itemsCategory.category}} <ng-pluralize count="totalQuantity()" when="{'0': 'no items', 'one': '1 item', 'other': '{} items'}"></ng-pluralize></h1>
+	<a class="button" ng-tap="$navigate.go('stats')">Stats</a>    
+</header> 
+
+<div class="content"> 
+		<!--<div ng-controller="ItemsController">-->
+		<nav>
+			<form id="search">
+			  <input type="search" placeholder="Search" ng-model="itemsCategory.title" select-on-click>
+			</form>
+		</nav>
+
+		<!--<h4>
+			<ng-pluralize count="filtered.length" when="{'0': 'No products', 'one': '1 product', 'other': '{} products'}"></ng-pluralize>
+			<ng-pluralize count="totalQuantity()" when="{'0': 'no items', 'one': '1 item', 'other': '{} items'}"></ng-pluralize> 
+		</h4>-->
+		
+		<ul class="list items">
+			<li ng-repeat="item in filtered = (items | filter:itemsCategory)" data-id="{{$index}}" hm-swipe="dragleft()" class="clearfix">
+				<div class="inner">
+					<h3 title="{{item.initQty}}">{{item.title}}</h3>
+					{{item.price/100 | currency}} <br>
+					
+					<select class="select" ng-if="item.category=='Shirts'" ng-model="item.size">
+						<option ng-repeat="size in shirtSizes">{{size.sex}} {{size.size}}</option>	
+					</select>
+				</div>
+
+				<!--<div toggle-switch model="switchStatus"></div>-->
+				
+				<div class="toggle" hm-tap="item.payment=toggle(item.payment, 'cash', 'card'); save()" ng-class="{active: item.payment=='card'}">
+					<div class="toggle-handle"></div>
+				</div>
+						  
+				<div class="controls">  
+					<button class="subtract" hm-tap="subtract(item)" hm-hold="subtractAuto($index)">-</button>
+					<span>{{item.qty}}</span>
+					<button class="add" hm-tap="add(item)">+</button>
+				</div>
+					
+			</li>  	    
+		</ul> 
+		<!--<div class="clear"></div> 
+		<form ng-submit="additem()" class="clearfix">
+			<h3>Add a New Item</h3>
+		  	<div class="input-group">
+			<div class="input-row"><label>Title</label><input type="text" ng-model="title" size="30" placeholder="Name of item"></div>
+			<div class="input-row"><label>Price</label><input type="number" step="any" ng-model="price" size="3" placeholder="$0.00"></div>
+			<div class="input-row"><label>Quantity</label><input type="text" pattern="\d*" ng-model="qty" size="3" placeholder="" class="short"></div>
+			<div class="input-row" ng-show="itemsCategory.category != 'Shirts'"><label>Bundle Quantity</label><input type="text" pattern="\d*" ng-model="bundleQty" size="3" placeholder="" class="short"></div>
+			<div ng-show="itemsCategory.category == 'Shirts'"><input type="hidden" ng-model="size" value="Male S"></div>
+			<input type="submit" class="button-block" value="Add Item">
+			</div>
+		</form>		
+				     
+		<p><a href="" ng-tap="$navigate.go('/items/add/' + itemsCategory.category, 'modal')">Add New Item</a></p>	-->	  
+		<a href="" class="add-row" ng-tap="$navigate.go('/items/add/' + itemsCategory.category, 'modal')">Add New Item</a>		
+	
+		<p ng-show="items.length > 0"><a href="" ng-click="deleteItems()" data-ignore="push">Delete All Items</a></p>   
+	</div>

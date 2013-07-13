@@ -1,0 +1,16 @@
+<header class="bar-title">
+	<h1 class="title"><ng-pluralize count="categories.length" when="{'0': 'No categories', 'one': '1 category', 'other': '{} cats'}"></ng-pluralize> <ng-pluralize count="items.length" when="{'0': '', 'one': '1 product', 'other': '{} products'}"></ng-pluralize></h1>
+	<a class="button" ng-tap="$navigate.go('stats')">Stats</a>    
+</header>  
+
+<div class="content"> <!--scrollable-->
+		
+	<ul class="list categories">
+		<li ng-repeat="category in categories track by $index" data-id="{{$index}}">
+			<a ng-tap="$navigate.go('items/{{category.title}}')"><h3>{{category.title}}</h3></a> <!--href="#/items/{{category.title}}"-->
+			<div class="chevron"></div>
+		</li>      
+	</ul> 
+	<a href="" class="add-row" ng-tap="$navigate.go('/add', 'modal')">Add New Category</a>	
+	<p ng-show="categories.length > 0"><a href="" ng-click="deleteAll()" data-ignore="push">Delete All Categories</a></p> 
+</div>

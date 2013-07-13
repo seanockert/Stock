@@ -1,0 +1,23 @@
+<header class="bar-title">
+	<a class="button-prev" ng-tap="$navigate.back()">Back</a>
+	<h1 class="title">Stats</h1>  
+</header>  
+<div class="content" hm-swipe="dragleft()"> 
+	<p><strong>{{areSold()}} out of {{totalItems()}} sold</strong></p>
+	<p>{{stats.length-areSold()}} added</p>
+	<p><span class="payment-type cash">Cash</span> Total: {{total('cash')/100 | currency}}</p>
+	<p>Grand Total: {{total('earned')/100 | currency}}</p>
+		
+	<ul class="list stats">
+		<li ng-repeat="stat in stats | orderBy:'timestamp':true" data-id="{{$index}}" data-refID="{{stat.itemId}}" class="stat-{{stat.type}}">
+		    <b>{{stat.type}}</b> a  
+		    <span ng-show="stat.options.qty > 1">{{stat.options.qty}}x</span> 
+		    <span ng-show="stat.options.size">{{stat.options.size}}</span> 
+		    <strong>{{stat.title}}</strong> 
+		    
+		    <time class="grey">{{stat.timestamp | date:'h:mma, d MMM yyyy'}}</time>
+		    <span class="count-positive {{stat.payment}}">{{stat.payment}}</span>
+		</li>      
+	</ul> 
+	<p ng-show="stats.length > 0"><a href="" ng-click="deleteStats()" data-ignore="push">Delete Stats</a></p>	 
+</div>

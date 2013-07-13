@@ -1,0 +1,301 @@
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-size: 16px;
+    }
+    
+    .clear {
+      clear: both;
+    }
+    
+    .grey {
+      color: #999;
+    }
+    
+    .greybg {
+      background: #eee;
+    }
+    
+    .left {
+      float: left;
+    }
+    
+    .right {
+      float: right;
+    }    
+    
+    .visually-hidden {
+      opacity: 0;
+      height: 0;
+      padding: 0;
+      margin: 0;
+      border: none;   
+    }
+    
+    .clearfix:after {
+      clear: both;
+      display: block;
+      content: " ";
+      height: 0px;
+      visibility: hidden;
+    }
+    .clearfix {
+      display: inline-block;
+    }
+    /* Hide these rules from IE-mac \*/
+    * html .clearfix {
+      height: 1%;
+    }
+    .clearfix {
+      display: block;
+    }
+    li.clearfix {
+      display: list-item;
+    }   
+    
+    .bar-title {
+      -webkit-tap-highlight-color: rgba(0,0,0,0); 
+      position: fixed;
+    }
+    
+    .bar-title .title {
+      font-size: 16px;
+    }
+    
+    .list {
+      margin-bottom: 0;
+    }
+    
+    .list li , button, a {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    
+    .list.items li, .list li.no-padding {
+      padding: 0;
+    }    
+    
+    .list.stats li:first-letter {
+      text-transform: capitalize;
+    }
+    
+    .list form {
+      padding: 12px;
+    }
+    
+    .list .toggle {
+      margin-top: 10px;
+      margin-right: 30px;
+      width: 95px;
+    }
+    
+    .toggle:before {
+      content: "Cash";
+    }
+    
+    .toggle.active:before {
+      content: "Card";      
+    }
+    
+    b {
+      font-weight: normal;
+    }
+    
+    .stat-sold b {
+      color: green;
+    }    
+    
+    .stat-added b {
+      color: red;
+    }
+    
+    time {
+      display: block;
+      font-size: 12px;
+      margin-right: -40px;
+    }
+    
+    .list li a:active {
+      background: #eee;
+    }
+    
+    .inner {
+      padding: 24px 12px;
+      padding-right: 0;
+      float: left;
+    }
+    
+    h4, p {
+      margin: 12px;
+    }
+    
+    h4 em {
+      font-weight: normal;
+      color: green;
+    }
+    
+    .controls {
+      font-size: 1.5em;
+      line-height: 1;
+      float: right;  
+      text-align: center;   
+    }
+    
+    .controls span {
+      display: inline-block;
+      width: 50px;
+    }
+    
+    .add, .subtract {
+      padding: 6px;
+      width: 50px;
+      color: #222;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      border: 1px solid rgba(0, 0, 0, .3);
+      border-radius: 3px;
+      
+      background: #eee;
+      background: linear-gradient(to bottom, #f8f8f8 0, #d4d4d4 100%);
+    }
+    
+    .add:active, .subtract:active {
+      background: #aaa;
+    }
+    
+    .list li:after {
+      clear: both;
+    }
+    
+    .count-positive {     
+      text-transform: capitalize;
+    }
+    
+    .count-positive.card {
+      background: #1eafe7;
+      background: -webkit-linear-gradient(to bottom, #1eafe7 0, #1a97c8 100%);
+    }
+    
+    form {
+      background: #eee;
+      padding: 12px;
+    }
+    
+      form h3 {
+        margin-bottom: 12px;
+      }
+    
+      input {
+        margin-top: 0;
+        -webkit-appearance: none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0); 
+      }      
+      
+      #search {
+        padding: 10px 10px;
+      }
+      
+        #search input {
+          margin: 0;
+        }
+      
+      input.short {
+        width: 140px;
+      }
+      
+      .button-block {
+        width: 100%;
+      }
+      
+      .list li select {
+        width: 100px;
+        float: right;
+        padding: 4px;
+        margin-top: 20px;
+        margin-right: 20px;
+        margin-bottom: -12px;
+        -webkit-appearance: menulist-button !important;
+      }
+      
+       
+    .add-row {
+      display: block;
+      padding: 20px 12px;
+      margin: 0;
+      text-transform: uppercase;
+      color: #999;
+      line-height: 1;
+      text-align: center;
+      border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+    
+    .add-row:active {
+      background: #eee;
+    }
+  
+  
+    .bar-title {
+      background: #bbb;
+      border: none;
+    }
+    
+    .bar-title .title {
+      color: #333;
+      text-shadow: none;
+    }
+    
+    .bar-title .button, 
+    .bar-title .button-prev,
+    .bar-title .button-prev:before {
+      background: #333;
+      box-shadow: none;
+      border: none;
+    }
+    
+    .bar-title .button-positive {
+      box-shadow: none;
+      border: none;
+    }
+  
+  
+    /* Angular.js animated navigation */
+    .slide-enter, 
+    .slide-leave
+    { 
+        -webkit-transition: 100ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+        transition: 100ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    } 
+     
+    .slide-enter {
+        left: 100%;
+    }
+    .slide-enter.slide-enter-active {
+        left: 0;
+    }
+     
+    .slide-leave {
+        left: 0;
+    } 
+    
+    .slide-leave.slide-leave-active {
+        left: -100%;
+    }  
+    
+  @media all and (max-width: 580px) {
+    .controls {
+      margin-top: 19px;
+    }
+
+    .list li select {
+      float: none;
+      margin-top: 10px;
+    }
+    
+    .list li .toggle {
+      margin-top: 16px;
+    }
+  }

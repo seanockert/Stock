@@ -1,0 +1,14 @@
+<header class="bar-title" ng-click="document.activeElement.blur()">
+	<a class="button" ng-tap="$navigate.back()">Close</a>
+	<h1 class="title">Add Category</h1>   
+	<a class="button-positive" ng-tap="addcategory()">Add</a>   
+</header> 
+
+<div class="content greybg"> 
+	<form ng-submit="addcategory()" class="clearfix">
+	  	<div class="input-group">
+			<input type="text" ng-model="title" size="30" placeholder="Name of category" autofocus>					
+			<input type="submit" class="button-block visually-hidden" value="Add Category">
+		</div>
+	</form>				     
+</div>
