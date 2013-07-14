@@ -53,7 +53,11 @@
     }
     li.clearfix {
       display: list-item;
-    }   
+    }  
+    
+    a {
+      color: #E02E53;
+    } 
     
     .bar-title {
       -webkit-tap-highlight-color: rgba(0,0,0,0); 
@@ -239,22 +243,28 @@
   
   
     .bar-title {
-      background: #bbb;
+      background: #E02E53;
       border: none;
     }
     
     .bar-title .title {
-      color: #333;
+      color: #fff;
       text-shadow: none;
     }
     
     .bar-title .button, 
     .bar-title .button-prev,
     .bar-title .button-prev:before {
-      background: #333;
+      background: #722e3c;
       box-shadow: none;
       border: none;
     }
+    
+    .bar-title .button:active, 
+    .bar-title .button-prev:active,
+    .bar-title .button-prev:active:before {
+      background: #44121c;
+    }    
     
     .bar-title .button-positive {
       box-shadow: none;

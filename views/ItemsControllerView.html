@@ -1,5 +1,5 @@
 <header class="bar-title" ng-tap="unFocus()">
-	<a class="button-prev" ng-tap="$navigate.back()">Back</a>
+	<a class="button-prev" ng-tap="$navigate.go('/')">Back</a>
 	<h1 class="title">{{filtered.length}} {{itemsCategory.category}} <ng-pluralize count="totalQuantity()" when="{'0': 'no items', 'one': '1 item', 'other': '{} items'}"></ng-pluralize></h1>
 	<a class="button" ng-tap="$navigate.go('stats')">Stats</a>    
 </header> 

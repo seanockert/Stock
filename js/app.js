@@ -11,7 +11,7 @@ stockApp.config(function ($routeProvider) {
         {
             controller: 'RootController',
             templateUrl: 'views/RootControllerView.html'
-            //,reverse: true
+            ,reverse: true
         })        
         
         .when('/add',
